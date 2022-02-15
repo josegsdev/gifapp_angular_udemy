@@ -10,7 +10,12 @@ export class SidebarComponent  {
   constructor(private gifServ:GifsService) { }
 
   get historial():string[]{
-    return this.gifServ.historial;
+    return this.gifServ.historial.splice(0,10);
+  }
+
+  busquedaHistorial(e:string){
+    this.gifServ.agregarBusqueda(e);
+    console.log(e);
   }
   
 
